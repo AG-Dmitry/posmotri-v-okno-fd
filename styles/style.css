@@ -35,16 +35,13 @@ ol {
 .button {
   border: 1px solid currentColor;
   padding: 5px;
+  outline: none;
   color: currentColor;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: bold;
   font-size: 18px;
   background-color: transparent;
   inline-size: fit-content;
-}
-
-button:focus {
-  outline: none;
 }
 
 button:focus-visible {
@@ -81,8 +78,8 @@ button:focus-visible {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  inline-size: 1200px;
   block-size: 100%;
+  inline-size: 1140px;
 }
 
 .content {
@@ -91,6 +88,7 @@ button:focus-visible {
   align-items: flex-end;
   gap: 30px;
   align-self: center;
+  inline-size: 100%;
 }
 
 .result {
@@ -151,6 +149,7 @@ button:focus-visible {
   border-right: none;
   border-left: none;
   padding: 0;
+  outline: none;
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
@@ -197,10 +196,6 @@ button:focus-visible {
   font-size: inherit;
 }
 
-.search-form__textfield:focus {
-  outline: none;
-}
-
 .search-form__textfield:active {
   left: -1px;
   border: 1px solid;
@@ -243,8 +238,9 @@ button:focus-visible {
 }
 
 .content__details {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-grow: 1;
+  grid-template-rows: 1fr 298px;
   gap: 23px;
 }
 
@@ -261,7 +257,6 @@ button:focus-visible {
 
 .content__list-container {
   position: relative;
-  max-height: 298px;
   overflow-y: auto;
 }
 
@@ -273,6 +268,7 @@ button:focus-visible {
 
 .content__card-link {
   display: block;
+  outline: none;
   color: currentColor;
   text-decoration: none;
 }
@@ -281,16 +277,16 @@ button:focus-visible {
   background-color: #545050;
 }
 
-.content__card-link:focus {
-  outline: none;
-}
-
 .content__card-link:focus-visible {
   outline: 1px solid currentColor;
 }
 
+.content__card-link:active {
+  background-color: #545050;
+}
+
 .content__list-item {
-  padding: 0 3px;
+  padding: 0 2px 0 3px;
 }
 
 .content__video-card {
@@ -317,6 +313,10 @@ button:focus-visible {
   text-underline-offset: 3px;
 }
 
+.content__card-link:active .content__video-card-title {
+  text-decoration: none;
+}
+
 .content__video-card-description{
   display: -webkit-box;
   overflow-y: hidden; 
@@ -330,6 +330,10 @@ button:focus-visible {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
+}
+
+.content__card-link:active .content__video-card-description {
+  text-decoration: none;
 }
 
 .content__video-card-description-container {
