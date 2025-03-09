@@ -8,16 +8,6 @@ html {
   block-size: 100%;
 }
 
-.page {
-  inline-size: 1200px;
-  block-size: 100%;
-  margin: auto;
-  color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-size: 18px;
-  background-color: #1b1919;
-}
-
 h1,
 h2,
 h3,
@@ -37,13 +27,338 @@ ol {
   list-style: none;
 }
 
+.preloader {
+  position: absolute;
+  inset: 0;
+}
+
+.button {
+  border: 1px solid currentColor;
+  padding: 5px;
+  color: currentColor;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: transparent;
+  inline-size: fit-content;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  display: flex;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+  inline-size: 1200px;
+  block-size: 100%;
+}
+
+.content {
+  display: flex;
+  justify-self: center;
+  align-items: flex-end;
+  gap: 30px;
+  align-self: center;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result__video-container {
+  position: relative;
+  inline-size: 711px;
+  block-size: 386px;
+}
+
+.result__video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  padding-bottom: 5px;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
+}
+
+.search-form__label:hover {
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  position: relative;
+  border: 1px solid;
+  border-color: currentColor;
+  border-right: none;
+  border-left: none;
+  padding: 0;
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  inline-size: 225px;
+  block-size: 27px;
+}
+
+.search-form__textfield::-webkit-input-placeholder {
+  opacity: .7;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.search-form__textfield::-moz-placeholder {
+  opacity: .7;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.search-form__textfield:-ms-input-placeholder {
+  opacity: .7;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.search-form__textfield::-ms-input-placeholder {
+  opacity: .7;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.search-form__textfield::placeholder {
+  opacity: .7;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:active {
+  left: -1px;
+  border: 1px solid;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  align-self: center;
+  border: 1px solid currentColor;
+  inline-size: 19px;
+  block-size: 19px;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  display: none;
+  background-color: currentColor;
+}
+
+.search-form__checkbox[type="checkbox"]:checked ~ .search-form__pseudo-checkbox::after {
+  display: block;
+}
+
+.search-form__checkbox[type="checkbox"]:hover ~ .search-form__label-text {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  inline-size: 194px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.title {
+  font-family: Oswald, 'Fira Sans Condensed', sans-serif;
+  font-size: 75px;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list-container {
+  position: relative;
+  max-height: 298px;
+  overflow-y: auto;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__card-link {
+  display: block;
+  color: currentColor;
+  text-decoration: none;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.content__list-item {
+  padding: 0 3px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  block-size: 103px;
+  inline-size: 390px;
+}
+
+.content__video-card-title {
+  padding-bottom: 3px;
+  overflow: hidden;
+  font-family: Oswald, 'Fira Sans Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+}
+
+.content__card-link:hover .content__video-card-title {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.content__video-card-description{
+  display: -webkit-box;
+  overflow-y: hidden; 
+  line-height: 16.2px;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  max-width: 196px; 
+}
+
+.content__video-card-thumbnail {
+  -o-object-fit: fill;
+     object-fit: fill;
+  -o-object-position: center;
+     object-position: center;
+  block-size: 100%;
+  inline-size: 194px;
+}
+
+.more-button {
+  margin: 30px 3px 2px 2px;
+  inline-size: calc(100% - 5px);
+}
+
 /* Кастомный скроллбар */
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
+  background: rgb(217 217 217 / 0.1);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {

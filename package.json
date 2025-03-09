@@ -1,0 +1,24 @@
+{
+  "name": "posmotri-v-okno-fd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "lint": "stylelint '**/*.css'",
+    "lintfix": "stylelint '**/*.css' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AG-Dmitry/posmotri-v-okno-fd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AG-Dmitry/posmotri-v-okno-fd/issues"
+  },
+  "homepage": "https://github.com/AG-Dmitry/posmotri-v-okno-fd#readme",
+  "description": "",
+  "dependencies": {
+    "stylelint": "^16.15.0"
+  }
+}
